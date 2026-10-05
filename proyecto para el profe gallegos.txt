@@ -1,0 +1,73 @@
+#include <stdio.h>
+
+float celsiusAFahrenheit(float celsius)
+{
+float fahrenheit = celsius * 1.8 + 32;
+return fahrenheit;
+}
+
+float fahrenheitACelsius(float fahrenheit)
+{
+float celsius = (fahrenheit - 32) / 1.8;
+return celsius;
+}
+
+float celsiusAKelvin(float celsius)
+{
+float kelvin = celsius + 273.15;
+return kelvin;
+}
+
+int main()
+{
+float celsius;
+float fahrenheit;
+
+int menu = 1;
+
+do
+{
+printf("\nSelecciona tu opcion\n");
+printf("1.- Celsius a Fahrenheit\n");
+printf("2.- Fahrenheit a Celsius\n");
+printf("3.- Celsius a Kelvin\n");
+printf("4.- Salir del menu\n");
+scanf("%d", &menu);
+
+switch(menu)    
+{    
+    case 1:    
+        printf("Ingresa los grados Celsius: ");    
+        scanf("%f", &celsius);    
+
+        printf("El resultado es: %.2f Fahrenheit\n",    
+               celsiusAFahrenheit(celsius));    
+        break;    
+
+    case 2:    
+        printf("Ingresa los grados Fahrenheit: ");    
+        scanf("%f", &fahrenheit);    
+
+        printf("El resultado es: %.2f Celsius\n",    
+               fahrenheitACelsius(fahrenheit));    
+        break;    
+
+    case 3:    
+        printf("Ingresa los grados Celsius: ");    
+        scanf("%f", &celsius);    
+
+        printf("El resultado es: %.2f Kelvin\n",    
+               celsiusAKelvin(celsius));    
+        break;    
+
+    default:    
+        printf("Saliendo del menu\n");    
+        break;    
+}
+
+}
+while(menu != 4);
+
+return 0;
+
+}
